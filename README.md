@@ -48,15 +48,25 @@ npx http-server
 브라우저에서 http://localhost:8000 접속
 
 ## 배포
-Vercel, Netlify 등 정적 호스팅 서비스에 배포 가능합니다.
 
-### Vercel 환경 변수 설정
-Vercel에 배포 시 다음 환경 변수를 설정하세요:
-- 프로젝트 Settings → Environment Variables
-- `SUPABASE_URL`: Supabase 프로젝트 URL
-- `SUPABASE_ANON_KEY`: Supabase anon key
+### Vercel 배포 방법
 
-또는 `config.js` 파일을 Vercel에 직접 배포할 수도 있습니다 (권장하지 않음).
+1. **GitHub 저장소 연결**
+   - Vercel에서 GitHub 저장소 `cardflip` 선택
+
+2. **환경 변수 설정** (필수)
+   - Vercel 프로젝트 → Settings → Environment Variables
+   - 다음 환경 변수 추가:
+     - `SUPABASE_URL`: `https://lhkblmmhdnqmdmgpjfyr.supabase.co`
+     - `SUPABASE_ANON_KEY`: Supabase anon/public key
+   - Environment: Production, Preview, Development 모두 체크
+
+3. **배포**
+   - Deploy 버튼 클릭
+   - 빌드 시 자동으로 `config.js`가 생성됩니다
+
+### 다른 호스팅 서비스
+Netlify 등에서도 동일한 방법으로 환경 변수를 설정하면 됩니다.
 
 ## 보안 주의사항
 - `config.js` 파일은 Git에 커밋하지 마세요 (.gitignore에 포함됨)

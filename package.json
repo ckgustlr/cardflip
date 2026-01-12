@@ -1,0 +1,8 @@
+{
+  "name": "cardflip",
+  "version": "1.0.0",
+  "description": "다람쥐 카드 뒤집기 게임",
+  "scripts": {
+    "build": "node build-config.js"
+  }
+}
