@@ -1,6 +1,12 @@
-// Supabase Configuration
-const SUPABASE_URL = 'https://lhkblmmhdnqmdmgpjfyr.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxoa2JsbW1oZG5xbWRtZ3BqZnlyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgyMDczMjMsImV4cCI6MjA4Mzc4MzMyM30.AFblCKRriqy1bpewb0qou8dKBh_gc-Y8BNobKxnYCsg';
+// Supabase Configuration (loaded from config.js)
+// Make sure config.js is loaded before this file in index.html
+if (typeof SUPABASE_CONFIG === 'undefined') {
+    console.error('SUPABASE_CONFIG is not defined. Please create config.js file.');
+    alert('설정 파일(config.js)이 없습니다. config.example.js를 참고하여 config.js를 생성해주세요.');
+}
+
+const SUPABASE_URL = SUPABASE_CONFIG?.url || '';
+const SUPABASE_KEY = SUPABASE_CONFIG?.key || '';
 
 // Initialize Supabase Client
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
